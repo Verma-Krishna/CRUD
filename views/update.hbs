@@ -1,0 +1,62 @@
+{{>header}}
+<title>CRUD | Add</title>
+{{>navbar}}
+
+<div class="container-fluid mt-1">
+    <div class="w-75 m-auto">
+        <h5 class="background text-light text-center p-2">Create Employee Record</h5>
+        {{#if show}}
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+            {{error}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+        <form action="/update/{{data.id}}" method="post">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <input type="text" name="name" placeholder="Enter Full name" class="form-control"
+                        value="{{data.name}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <input type="email" name="email" placeholder="Enter Email" class="form-control"
+                        value="{{data.email}}">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="phone" placeholder="Enter Phone" class="form-control"
+                        value="{{data.phone}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6  mb-3">
+                    <input type="text" name="dsg" placeholder="Enter Designation" class="form-control"
+                        value="{{data.dsg}}">
+                </div>
+                <div class="col-md-6 ">
+                    <input type="text" name="salary" placeholder="Enter Salary" class="form-control"
+                        value="{{data.salary}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <input type="text" name="city" placeholder="Enter City" class="form-control" value="{{data.city}}">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="state" placeholder="Enter State" class="form-control"
+                        value="{{data.state}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <button type="reset" class="btn btn-danger w-100">Reset</button>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="border-0 p-1 rounded w-100 background">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{>footer}}

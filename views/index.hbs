@@ -1,0 +1,39 @@
+{{>header}}
+<title>CRUD | HOME</title>
+{{>navbar}}
+<div class="container-fluid ">
+  <h5 class="text-center mt-3">Employee Records</h5>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>City</th>
+        <th>State</th>
+        <th></th>
+        <th></th>
+      </tr>
+      {{#each data}}
+      <tr>
+        <td>{{_id}}</td>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{phone}}</td>
+        <td>{{dsg}}</td>
+        <td>{{salary}}</td>
+        <td>{{city}}</td>
+        <td>{{state}}</td>
+        
+        <td><a href="/update/{{_id}}"><span class="material-symbols-outlined">Edit</span></a></td>
+        <td><a href="/delete/{{_id}}"><span class="material-symbols-outlined">Delete</span></a></td>
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
+
+{{>footer}}
